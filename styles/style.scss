@@ -26,38 +26,71 @@ h4,
   font-family: "Fraunces", serif;
 }
 
-.grid-container {
+.grid-container-main {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(10, auto);
-  grid-template-areas:
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(520px, 1fr));
+    grid-template-areas:
     "landing"
+    "egg"
     "brand"
+    "egg-holder"
     "audience"
     "design"
     "photography"
     "client"
+    "img-grid"
     "footer";
 }
 
 .landing {
   grid-area: landing;
+  position: relative;
+  &__info {
+    img {
+      position: absolute;
+      object-fit: cover;
+      top: 0;
+      z-index: -1;
+    }
+  }
 }
+
+
+.egg {
+  grid-area: egg;
+} 
+
 .brand {
   grid-area: brand;
+  background-color: $-clr-n-White;
 }
 .audience {
   grid-area: audience;
+  background-color: $-clr-n-White;
 }
 .design {
   grid-area: design;
+  position: relative;
+  img {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+  }
 }
 .photography {
   grid-area: photography;
+  position: relative;
+  img {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+  }
 }
 
 .client {
   grid-area: client;
+  background-color: $-clr-n-White;
   .client__review {
     img {
       height: 4rem;
@@ -66,8 +99,26 @@ h4,
   }
 }
 
+.grid-container-imgs {
+  // grid-area: img-grid;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
+
+}
+
 footer {
   grid-area: footer;
+  background-color: $-clr-p-Dmoderatecyan;
+}
+
+.attribution {
+  overflow: hidden;
+  padding: 1rem;
 }
 
 @import "./desktop";

@@ -65,47 +65,85 @@ h4,
   font-family: "Fraunces", serif;
 }
 
-.grid-container {
+.grid-container-main {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(10, auto);
-  grid-template-areas: "landing" "brand" "audience" "design" "photography" "client" "footer";
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(520px, 1fr));
+  grid-template-areas: "landing" "egg" "brand" "egg-holder" "audience" "design" "photography" "client" "img-grid" "footer";
 }
 
 .landing {
   grid-area: landing;
+  position: relative;
+}
+.landing__info img {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  top: 0;
+  z-index: -1;
+}
+
+.egg {
+  grid-area: egg;
 }
 
 .brand {
   grid-area: brand;
+  background-color: white;
 }
 
 .audience {
   grid-area: audience;
+  background-color: white;
 }
 
 .design {
   grid-area: design;
+  position: relative;
+}
+.design img {
+  position: absolute;
+  top: 0;
+  z-index: -1;
 }
 
 .photography {
   grid-area: photography;
+  position: relative;
+}
+.photography img {
+  position: absolute;
+  top: 0;
+  z-index: -1;
 }
 
 .client {
   grid-area: client;
+  background-color: white;
 }
 .client .client__review img {
   height: 4rem;
   border-radius: 50%;
 }
 
-footer {
-  grid-area: footer;
+.grid-container-imgs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.grid-container-imgs img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
 }
 
-@media (min-width: 888px) {
-  .grid-container {
-    display: grid;
-  }
+footer {
+  grid-area: footer;
+  background-color: #458c7e;
+}
+
+.attribution {
+  overflow: hidden;
+  padding: 1rem;
 }/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap");
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+     -moz-text-size-adjust: none;
+          text-size-adjust: none;
+}
+
+footer, header, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+/* (graphic design text) */
+/* (photography text) */
+/* (footer) */
+html {
+  font-family: "Barlow", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+.contact,
+.learn-more,
+.client__name {
+  font-family: "Fraunces", serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(10, auto);
+  grid-template-areas: "landing" "brand" "audience" "design" "photography" "client" "footer";
+}
+
+.landing {
+  grid-area: landing;
+}
+
+.brand {
+  grid-area: brand;
+}
+
+.audience {
+  grid-area: audience;
+}
+
+.design {
+  grid-area: design;
+}
+
+.photography {
+  grid-area: photography;
+}
+
+.client {
+  grid-area: client;
+}
+.client .client__review img {
+  height: 4rem;
+  border-radius: 50%;
+}
+
+footer {
+  grid-area: footer;
+}
+
+@media (min-width: 888px) {
+  .grid-container {
+    display: grid;
+  }
+}/*# sourceMappingURL=style.css.map */

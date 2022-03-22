@@ -1,0 +1,73 @@
+@import "./reset";
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap");
+
+$-clr-p-Softred: hsl(7, 99%, 70%);
+$-clr-p-Yellow: hsl(51, 100%, 49%);
+$-clr-p-Ddesatcyan: hsl(167, 40%, 24%); /* (graphic design text) */
+$-clr-p-Dblue: hsl(198, 62%, 26%); /* (photography text) */
+$-clr-p-Dmoderatecyan: hsl(168, 34%, 41%); /* (footer) */
+$-clr-n-VDdesatblue: hsl(212, 27%, 19%);
+$-clr-n-VDgrayblue: hsl(213, 9%, 39%);
+$-clr-n-Dgrayblue: hsl(232, 10%, 55%);
+$-clr-n-Grayblue: hsl(210, 4%, 67%);
+$-clr-n-White: hsl(0, 0%, 100%);
+
+html {
+  font-family: "Barlow", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+.contact,
+.learn-more,
+.client__name {
+  font-family: "Fraunces", serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(10, auto);
+  grid-template-areas:
+    "landing"
+    "brand"
+    "audience"
+    "design"
+    "photography"
+    "client"
+    "footer";
+}
+
+.landing {
+  grid-area: landing;
+}
+.brand {
+  grid-area: brand;
+}
+.audience {
+  grid-area: audience;
+}
+.design {
+  grid-area: design;
+}
+.photography {
+  grid-area: photography;
+}
+
+.client {
+  grid-area: client;
+  .client__review {
+    img {
+      height: 4rem;
+      border-radius: 50%;
+    }
+  }
+}
+
+footer {
+  grid-area: footer;
+}
+
+@import "./desktop";

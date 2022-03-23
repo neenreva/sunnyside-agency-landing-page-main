@@ -65,23 +65,61 @@ h4,
   font-family: "Fraunces", serif;
 }
 
+main {
+  width: 100%;
+}
+
 .grid-container-main {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax(520px, 1fr));
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
   grid-template-areas: "landing" "egg" "brand" "egg-holder" "audience" "design" "photography" "client" "img-grid" "footer";
+}
+
+.bg-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+
+.rel-div {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .landing {
   grid-area: landing;
-  position: relative;
 }
-.landing__info img {
+.landing .bg-img {
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+.landing .landing__info nav {
   position: absolute;
-  -o-object-fit: cover;
-     object-fit: cover;
-  top: 0;
-  z-index: -1;
+  top: -100%;
+  width: 100%;
+  outline: 1px dashed black;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.landing .landing__info nav ol {
+  display: flex;
+}
+.landing .landing__info div {
+  position: absolute;
+  top: -70%;
+  width: 100%;
+  text-align: center;
+}
+.landing .landing__info div h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  padding-bottom: 3rem;
 }
 
 .egg {
@@ -100,42 +138,18 @@ h4,
 
 .design {
   grid-area: design;
-  position: relative;
-}
-.design img {
-  position: absolute;
-  top: 0;
-  z-index: -1;
 }
 
 .photography {
   grid-area: photography;
-  position: relative;
-}
-.photography img {
-  position: absolute;
-  top: 0;
-  z-index: -1;
 }
 
 .client {
   grid-area: client;
-  background-color: white;
-}
-.client .client__review img {
-  height: 4rem;
-  border-radius: 50%;
 }
 
 .grid-container-imgs {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-}
-.grid-container-imgs img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
+  grid-area: img-grid;
 }
 
 footer {
@@ -143,7 +157,46 @@ footer {
   background-color: #458c7e;
 }
 
-.attribution {
+/* .attribution {
   overflow: hidden;
   padding: 1rem;
+} */
+@media (min-width: 888px) {
+  #landing-bg-img {
+    content: url(../images/desktop/image-header.jpg);
+  }
+
+  #egg-bg-img {
+    content: url(../images/desktop/image-transform.jpg);
+  }
+
+  #brand-bg-img {
+    content: url(../images/desktop/image-header.jpg);
+  }
+
+  #egg-holder-bg-img {
+    content: url(../images/desktop/image-stand-out.jpg);
+  }
+
+  #audience-bg-img {
+    content: url(../images/desktop/image-header.jpg);
+  }
+
+  #design-bg-img {
+    content: url(../images/desktop/image-header.jpg);
+  }
+
+  #photography-bg-img {
+    content: url(../images/desktop/image-header.jpg);
+  }
+
+  .grid-container-main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "landing landing" "brand egg" "egg-holder audience" "design photography" "client client" "img-grid img-grid" "footer footer";
+  }
+
+  .landing {
+    grid-column: span 2;
+  }
 }/*# sourceMappingURL=style.css.map */

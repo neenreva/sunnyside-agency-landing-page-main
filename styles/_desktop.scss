@@ -1,5 +1,39 @@
 @media (min-width: 888px) {
-    // .grid-container {
-    //     display: grid;
-    // }
+  #landing-bg-img {
+    content: url(../images/desktop/image-header.jpg);
+  }
+  #egg-bg-img {
+    content: url(../images/desktop/image-transform.jpg);
+  }
+  #brand-bg-img {
+    content: url(../images/desktop/image-header.jpg);
+  }
+  #egg-holder-bg-img {
+    content: url(../images/desktop/image-stand-out.jpg);
+  }
+  #audience-bg-img {
+    content: url(../images/desktop/image-header.jpg);
+  }
+  #design-bg-img {
+    content: url(../images/desktop/image-header.jpg);
+  }
+  #photography-bg-img {
+    content: url(../images/desktop/image-header.jpg);
+  }
+  .grid-container-main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    // grid-template-rows: repeat(7, 400px);
+    grid-template-areas:
+      "landing landing"
+      "brand egg"
+      "egg-holder audience"
+      "design photography"
+      "client client"
+      "img-grid img-grid"
+      "footer footer";
+  }
+  .landing {
+    grid-column: span 2;
+  }
 }

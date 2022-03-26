@@ -33,7 +33,35 @@
       "img-grid img-grid"
       "footer footer";
   }
+  
   .landing {
-    grid-column: span 2;
+    grid-column: span 2; 
+    .landing__info {
+      nav {
+        ol {
+          display: flex;
+  
+          li{
+            display: inline;
+          }
+          .contact {
+            display: block;
+  
+          }
+          .hamburger {
+            display: none;
+          }
+        }
+      }
+      div {
+        top: -70%;
+        width: 100%;
+        h1 {
+          font-size: 2.5rem;
+          letter-spacing: 5px;
+          padding-bottom: 3rem;
+        }
+      }
+    }
   }
 }

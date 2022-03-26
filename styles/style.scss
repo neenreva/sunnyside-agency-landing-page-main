@@ -3,8 +3,8 @@
 
 $-clr-p-Softred: hsl(7, 99%, 70%);
 $-clr-p-Yellow: hsl(51, 100%, 49%);
-$-clr-p-Ddesatcyan: hsl(167, 40%, 24%); /* (graphic design text) */
-$-clr-p-Dblue: hsl(198, 62%, 26%); /* (photography text) */
+$-clr-p-Desatcyan: hsl(167, 40%, 24%); /* (graphic design text) */
+$-clr-p-Desatblue: hsl(198, 62%, 26%); /* (photography text) */
 $-clr-p-Dmoderatecyan: hsl(168, 34%, 41%); /* (footer) */
 $-clr-n-VDdesatblue: hsl(212, 27%, 19%);
 $-clr-n-VDgrayblue: hsl(213, 9%, 39%);
@@ -14,6 +14,7 @@ $-clr-n-White: hsl(0, 0%, 100%);
 
 html {
   font-family: "Barlow", sans-serif;
+  text-align: center;
 }
 
 h1,
@@ -72,19 +73,36 @@ main {
       position: absolute;
       top: -100%;
       width: 100%;
+      height: 5rem;
       outline: 1px dashed black;
       padding: 1rem;
       display: flex;
       justify-content: space-between;
+      align-items: center;
+
+      img {
+        height: 1.5rem;
+      }
+
       ol {
-        display: flex;
+        li {
+          display: none;
+        }
+
+        .contact {
+          display: none;
+        }
+
+        .hamburger {
+          display: block;
+        }
       }
     }
     div {
       position: absolute;
       top: -70%;
       width: 100%;
-      text-align: center;
+
       h1 {
         font-size: 2.5rem;
         text-transform: uppercase;
@@ -94,30 +112,106 @@ main {
     }
   }
 }
-.egg {
-  grid-area: egg;
-}
+
 .brand {
   grid-area: brand;
-  background-color: $-clr-n-White;
 }
 .audience {
   grid-area: audience;
-  background-color: $-clr-n-White;
 }
+
+.brand,
+.audience {
+  background-color: $-clr-n-White;
+  padding: 3rem 2rem;
+  h2 {
+    font-size: 2rem;
+    padding: 1rem 0 1rem 0;
+  }
+
+  &__blurb {
+    font-size: 1rem;
+    padding: 1rem 0 1rem 0;
+  }
+
+  .learn-more {
+    font-size: 1rem;
+    font-weight: 900;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+  }
+}
+
 .design {
   grid-area: design;
+  color: $-clr-p-Desatcyan;
 }
 .photography {
   grid-area: photography;
+  color: $-clr-p-Desatblue;
+}
+
+.design,
+.photography {
+  &__info {
+    h3 {
+      width: 100%;
+      font-size: 1.5rem;
+      font-weight: 900;
+
+      padding: 24.5rem 0 0;
+      position: absolute;
+      top: -100%;
+    }
+    p {
+      padding: 27.5rem 0 3rem 0;
+      position: absolute;
+      top: -100%;
+    }
+  }
 }
 
 .client {
   grid-area: client;
+  padding: 4rem 1.5rem 5rem 1.5rem;
+  h4 {
+    font-size: 1.25rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  &__reviews {
+    img {
+      border-radius: 50%;
+      height: 75px;
+      margin: 4rem 0 1.75rem 0;
+    }
+
+    .review {
+      font-size: 1.15rem;
+      padding-bottom: 2.5rem;
+      line-height: 2rem;  
+    }
+
+    .client{
+      &__name {
+        font-size: 1.15rem;
+        padding-bottom: 1rem;
+      }
+      &__position {
+        font-size: 1rem;
+        color: $-clr-n-Dgrayblue;
+      }
+    }
+  }
+
 }
 
 .grid-container-imgs {
   grid-area: img-grid;
+  display: grid;
+  grid-template: repeat(2, 50vw) / repeat(2, 50vw);
+  overflow: hidden;
 }
 
 footer {
@@ -125,9 +219,8 @@ footer {
   background-color: $-clr-p-Dmoderatecyan;
 }
 
-/* .attribution {
-  overflow: hidden;
+.attribution {
   padding: 1rem;
-} */
+}
 
 @import "./desktop";

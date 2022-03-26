@@ -53,6 +53,7 @@ input {
 /* (footer) */
 html {
   font-family: "Barlow", sans-serif;
+  text-align: center;
 }
 
 h1,
@@ -101,19 +102,29 @@ main {
   position: absolute;
   top: -100%;
   width: 100%;
+  height: 5rem;
   outline: 1px dashed black;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
-.landing .landing__info nav ol {
-  display: flex;
+.landing .landing__info nav img {
+  height: 1.5rem;
+}
+.landing .landing__info nav ol li {
+  display: none;
+}
+.landing .landing__info nav ol .contact {
+  display: none;
+}
+.landing .landing__info nav ol .hamburger {
+  display: block;
 }
 .landing .landing__info div {
   position: absolute;
   top: -70%;
   width: 100%;
-  text-align: center;
 }
 .landing .landing__info div h1 {
   font-size: 2.5rem;
@@ -122,34 +133,96 @@ main {
   padding-bottom: 3rem;
 }
 
-.egg {
-  grid-area: egg;
-}
-
 .brand {
   grid-area: brand;
-  background-color: white;
 }
 
 .audience {
   grid-area: audience;
+}
+
+.brand,
+.audience {
   background-color: white;
+  padding: 3rem 2rem;
+}
+.brand h2,
+.audience h2 {
+  font-size: 2rem;
+  padding: 1rem 0 1rem 0;
+}
+.brand__blurb,
+.audience__blurb {
+  font-size: 1rem;
+  padding: 1rem 0 1rem 0;
+}
+.brand .learn-more,
+.audience .learn-more {
+  font-size: 1rem;
+  font-weight: 900;
+  padding-bottom: 1rem;
+  text-transform: uppercase;
 }
 
 .design {
   grid-area: design;
+  color: #25564b;
 }
 
 .photography {
   grid-area: photography;
+  color: #19536b;
+}
+
+.design__info h3,
+.photography__info h3 {
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: 900;
+  padding: 24.5rem 0 0;
+  position: absolute;
+  top: -100%;
+}
+.design__info p,
+.photography__info p {
+  padding: 27.5rem 0 3rem 0;
+  position: absolute;
+  top: -100%;
 }
 
 .client {
   grid-area: client;
+  padding: 4rem 1.5rem 5rem 1.5rem;
+}
+.client h4 {
+  font-size: 1.25rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.client__reviews img {
+  border-radius: 50%;
+  height: 75px;
+  margin: 4rem 0 1.75rem 0;
+}
+.client__reviews .review {
+  font-size: 1.15rem;
+  padding-bottom: 2.5rem;
+  line-height: 2rem;
+}
+.client__reviews .client__name {
+  font-size: 1.15rem;
+  padding-bottom: 1rem;
+}
+.client__reviews .client__position {
+  font-size: 1rem;
+  color: #818498;
 }
 
 .grid-container-imgs {
   grid-area: img-grid;
+  display: grid;
+  grid-template: repeat(2, 50vw)/repeat(2, 50vw);
+  overflow: hidden;
 }
 
 footer {
@@ -157,10 +230,10 @@ footer {
   background-color: #458c7e;
 }
 
-/* .attribution {
-  overflow: hidden;
+.attribution {
   padding: 1rem;
-} */
+}
+
 @media (min-width: 888px) {
   #landing-bg-img {
     content: url(../images/desktop/image-header.jpg);
@@ -198,5 +271,26 @@ footer {
 
   .landing {
     grid-column: span 2;
+  }
+  .landing .landing__info nav ol {
+    display: flex;
+  }
+  .landing .landing__info nav ol li {
+    display: inline;
+  }
+  .landing .landing__info nav ol .contact {
+    display: block;
+  }
+  .landing .landing__info nav ol .hamburger {
+    display: none;
+  }
+  .landing .landing__info div {
+    top: -70%;
+    width: 100%;
+  }
+  .landing .landing__info div h1 {
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+    padding-bottom: 3rem;
   }
 }/*# sourceMappingURL=style.css.map */

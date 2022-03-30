@@ -214,10 +214,38 @@ main {
   overflow: hidden;
 }
 
-footer {
+.footer {
   grid-area: footer;
   background-color: $-clr-p-Dmoderatecyan;
+  padding: 2rem;
+  img {
+    padding: 1rem 0;
+  }
+
+  &__page-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $-clr-p-Desatcyan;
+    :hover {
+      color: $-clr-n-White
+    }
+  }
+
+  &__social-links {
+    padding: 1rem 4rem;
+    display: flex;
+    justify-content: space-around;
+    svg {
+      width: 20px;
+      height: 20px;
+      :hover {
+        fill: $-clr-n-White
+      }
+    }
+  }
 }
+
 
 .attribution {
   padding: 1rem;

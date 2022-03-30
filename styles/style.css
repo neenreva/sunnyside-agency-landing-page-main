@@ -225,9 +225,34 @@ main {
   overflow: hidden;
 }
 
-footer {
+.footer {
   grid-area: footer;
   background-color: #458c7e;
+  padding: 2rem;
+}
+.footer img {
+  padding: 1rem 0;
+}
+.footer__page-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #25564b;
+}
+.footer__page-links :hover {
+  color: white;
+}
+.footer__social-links {
+  padding: 1rem 4rem;
+  display: flex;
+  justify-content: space-around;
+}
+.footer__social-links svg {
+  width: 20px;
+  height: 20px;
+}
+.footer__social-links svg :hover {
+  fill: white;
 }
 
 .attribution {

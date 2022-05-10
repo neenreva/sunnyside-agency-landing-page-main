@@ -51,9 +51,34 @@ input {
 /* (graphic design text) */
 /* (photography text) */
 /* (footer) */
+#landing-bg-img {
+  content: url(../images/mobile/image-header.jpg);
+}
+
+#egg-bg-img {
+  content: url(../images/mobile/image-transform.jpg);
+}
+
+#egg-holder-bg-img {
+  content: url(../images/mobile/image-stand-out.jpg);
+}
+
+#audience-bg-img {
+  content: url(../images/mobile/image-header.jpg);
+}
+
+#design-bg-img {
+  content: url(../images/mobile/image-graphic-design.jpg);
+}
+
+#photography-bg-img {
+  content: url(../images/mobile/image-photography.jpg);
+}
+
 html {
   font-family: "Barlow", sans-serif;
   text-align: center;
+  color: hsl(212deg, 27%, 19%);
 }
 
 h1,
@@ -64,6 +89,7 @@ h4,
 .learn-more,
 .client__name {
   font-family: "Fraunces", serif;
+  color: hsl(212deg, 27%, 19%);
 }
 
 main {
@@ -73,15 +99,14 @@ main {
 .grid-container-main {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto;
+  grid-template-rows: 540px 1.21fr 1.7fr;
   grid-template-areas: "landing" "egg" "brand" "egg-holder" "audience" "design" "photography" "client" "img-grid" "footer";
+  overflow: hidden;
 }
 
 .bg-img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
   display: block;
 }
 
@@ -94,17 +119,12 @@ main {
 .landing {
   grid-area: landing;
 }
-.landing .bg-img {
-  -o-object-position: bottom;
-     object-position: bottom;
-}
 .landing .landing__info nav {
   position: absolute;
   top: -100%;
   width: 100%;
   height: 5rem;
-  outline: 1px dashed black;
-  padding: 1rem;
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -120,17 +140,26 @@ main {
 }
 .landing .landing__info nav ol .hamburger {
   display: block;
+  background: none;
+  border: none;
+  padding: 0;
+}
+.landing .landing__info nav ol .hamburger img {
+  height: 1rem;
 }
 .landing .landing__info div {
   position: absolute;
-  top: -70%;
+  top: -74%;
   width: 100%;
 }
 .landing .landing__info div h1 {
   font-size: 2.5rem;
+  font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 5px;
+  letter-spacing: 6px;
+  line-height: 1.3;
   padding-bottom: 3rem;
+  color: hsl(0deg, 0%, 100%);
 }
 
 .brand {
@@ -143,56 +172,59 @@ main {
 
 .brand,
 .audience {
-  background-color: white;
-  padding: 3rem 2rem;
+  background-color: hsl(0deg, 0%, 100%);
+  padding: 3rem 1.8rem;
 }
 .brand h2,
 .audience h2 {
   font-size: 2rem;
+  line-height: 1.2;
   padding: 1rem 0 1rem 0;
 }
 .brand__blurb,
 .audience__blurb {
-  font-size: 1rem;
-  padding: 1rem 0 1rem 0;
+  font-size: 1.1rem;
+  line-height: 1.77;
+  padding: 0.51rem 0 2rem 0;
 }
 .brand .learn-more,
 .audience .learn-more {
   font-size: 1rem;
   font-weight: 900;
-  padding-bottom: 1rem;
+  padding-bottom: 1.2rem;
   text-transform: uppercase;
 }
 
 .design {
   grid-area: design;
-  color: #25564b;
+  color: hsl(167deg, 40%, 24%);
 }
 
 .photography {
   grid-area: photography;
-  color: #19536b;
+  color: hsl(198deg, 62%, 26%);
 }
 
 .design__info h3,
 .photography__info h3 {
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 900;
-  padding: 24.5rem 0 0;
   position: absolute;
-  top: -100%;
+  top: -32.5%;
 }
 .design__info p,
 .photography__info p {
-  padding: 27.5rem 0 3rem 0;
+  font-size: 0.9751rem;
+  line-height: 1.77;
   position: absolute;
-  top: -100%;
+  top: -23%;
+  padding-inline: 1rem;
 }
 
 .client {
   grid-area: client;
-  padding: 4rem 1.5rem 5rem 1.5rem;
+  padding: 4rem 1.55rem 5.5rem 1.55rem;
 }
 .client h4 {
   font-size: 1.25rem;
@@ -205,58 +237,71 @@ main {
   margin: 4rem 0 1.75rem 0;
 }
 .client__reviews .review {
-  font-size: 1.15rem;
-  padding-bottom: 2.5rem;
+  font-size: 1.1rem;
+  padding-block: 0.125rem;
   line-height: 2rem;
 }
-.client__reviews .client__name {
+.client__reviews .client__info .client__name {
   font-size: 1.15rem;
-  padding-bottom: 1rem;
+  padding: 2rem 0 1rem 0;
 }
-.client__reviews .client__position {
+.client__reviews .client__info .client__position {
   font-size: 1rem;
-  color: #818498;
+  color: hsl(232deg, 10%, 55%);
 }
 
 .grid-container-imgs {
   grid-area: img-grid;
   display: grid;
   grid-template: repeat(2, 50vw)/repeat(2, 50vw);
-  overflow: hidden;
+}
+.grid-container-imgs img {
+  height: 100%;
 }
 
 .footer {
   grid-area: footer;
-  background-color: #458c7e;
+  background-color: hsl(168deg, 34%, 41%);
   padding: 2rem;
 }
 .footer img {
-  padding: 1rem 0;
+  width: 55%;
+  padding-block: 2rem;
 }
 .footer__page-links {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #25564b;
+  padding: 1rem 0.5rem;
+  color: hsl(167deg, 40%, 24%);
 }
 .footer__page-links :hover {
-  color: white;
+  color: hsl(0deg, 0%, 100%);
 }
 .footer__social-links {
-  padding: 1rem 4rem;
+  padding: 4.5rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .footer__social-links svg {
   width: 20px;
   height: 20px;
 }
 .footer__social-links svg :hover {
-  fill: white;
+  fill: hsl(0deg, 0%, 100%);
 }
 
 .attribution {
   padding: 1rem;
+  background-color: hsl(168deg, 34%, 41%);
+  color: hsl(0deg, 0%, 100%);
+}
+.attribution a {
+  color: hsl(167deg, 40%, 24%);
+  text-decoration: none;
+}
+.attribution a:hover {
+  color: hsl(51deg, 100%, 49%);
 }
 
 @media (min-width: 888px) {
@@ -268,10 +313,6 @@ main {
     content: url(../images/desktop/image-transform.jpg);
   }
 
-  #brand-bg-img {
-    content: url(../images/desktop/image-header.jpg);
-  }
-
   #egg-holder-bg-img {
     content: url(../images/desktop/image-stand-out.jpg);
   }
@@ -281,41 +322,94 @@ main {
   }
 
   #design-bg-img {
-    content: url(../images/desktop/image-header.jpg);
+    content: url(../images/desktop/image-graphic-design.jpg);
   }
 
   #photography-bg-img {
-    content: url(../images/desktop/image-header.jpg);
+    content: url(../images/desktop/image-photography.jpg);
   }
 
   .grid-container-main {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
     grid-template-areas: "landing landing" "brand egg" "egg-holder audience" "design photography" "client client" "img-grid img-grid" "footer footer";
   }
 
   .landing {
     grid-column: span 2;
   }
+  .landing .landing__info nav {
+    position: absolute;
+    top: -100%;
+    width: 100%;
+    height: 5rem;
+    padding: 4rem 2rem 2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .landing .landing__info nav img {
+    height: 2rem;
+    padding-inline: 0.5rem;
+  }
   .landing .landing__info nav ol {
     display: flex;
+    align-items: center;
   }
   .landing .landing__info nav ol li {
     display: inline;
+    padding-inline: 1.75rem;
+    color: hsl(0deg, 0%, 100%);
   }
   .landing .landing__info nav ol .contact {
     display: block;
+    padding: 1rem 2.25rem;
+    border: none;
+    border-radius: 2rem;
+    margin-left: 1.25rem;
   }
   .landing .landing__info nav ol .hamburger {
     display: none;
   }
   .landing .landing__info div {
-    top: -70%;
+    top: -75%;
     width: 100%;
   }
   .landing .landing__info div h1 {
+    font-size: 3.5rem;
+    letter-spacing: 9px;
+    padding-bottom: 5.5rem;
+  }
+
+  .brand {
+    padding: 2rem 15% 2rem 23%;
+  }
+
+  .audience {
+    padding: 2rem 23% 2rem 15%;
+  }
+
+  .brand,
+.audience {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+  .brand h2,
+.audience h2 {
     font-size: 2.5rem;
-    letter-spacing: 5px;
-    padding-bottom: 3rem;
+    font-weight: 900;
+    padding: 0;
+  }
+  .brand__blurb,
+.audience__blurb {
+    padding-block: 2.5rem;
+    line-height: 1.65;
+  }
+  .brand .learn-more,
+.audience .learn-more {
+    padding: 0;
+    padding-inline: 0.5rem;
   }
 }/*# sourceMappingURL=style.css.map */

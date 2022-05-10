@@ -5,9 +5,6 @@
   #egg-bg-img {
     content: url(../images/desktop/image-transform.jpg);
   }
-  #brand-bg-img {
-    content: url(../images/desktop/image-header.jpg);
-  }
   #egg-holder-bg-img {
     content: url(../images/desktop/image-stand-out.jpg);
   }
@@ -15,15 +12,15 @@
     content: url(../images/desktop/image-header.jpg);
   }
   #design-bg-img {
-    content: url(../images/desktop/image-header.jpg);
+    content: url(../images/desktop/image-graphic-design.jpg);
   }
   #photography-bg-img {
-    content: url(../images/desktop/image-header.jpg);
+    content: url(../images/desktop/image-photography.jpg);
   }
+
   .grid-container-main {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    // grid-template-rows: repeat(7, 400px);
+    grid-template-rows: auto;
     grid-template-areas:
       "landing landing"
       "brand egg"
@@ -33,35 +30,92 @@
       "img-grid img-grid"
       "footer footer";
   }
-  
+
   .landing {
-    grid-column: span 2; 
+    grid-column: span 2;
     .landing__info {
       nav {
+        position: absolute;
+        top: -100%;
+        width: 100%;
+        height: 5rem;
+        padding: 4rem 2rem 2rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+          height: 2rem;
+          padding-inline: 0.5rem;
+        }
+
         ol {
           display: flex;
-  
-          li{
+          align-items: center;
+
+          li {
             display: inline;
+            padding-inline: 1.75rem;
+            color: $-clr-n-White;
           }
           .contact {
             display: block;
-  
+            padding: 1rem 2.25rem;
+            border: none;
+            border-radius: 2rem;
+            margin-left: 1.25rem;
           }
           .hamburger {
             display: none;
           }
         }
       }
+
       div {
-        top: -70%;
+        top: -75%;
         width: 100%;
         h1 {
-          font-size: 2.5rem;
-          letter-spacing: 5px;
-          padding-bottom: 3rem;
+          font-size: 3.5rem;
+          letter-spacing: 9px;
+          padding-bottom: 5.5rem;
         }
       }
     }
+  }
+
+  .brand {
+    padding: 2rem 15% 2rem 23%;
+  }
+  .audience {
+    padding: 2rem 23% 2rem 15%;
+  }
+
+  .brand,
+  .audience {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      padding: 0;
+    }
+
+    &__blurb {
+      padding-block: 2.5rem;
+      line-height: 1.65;
+    }
+
+    .learn-more {
+      padding: 0;
+      padding-inline: .5rem;
+    }
+  }
+
+  .design {
+  }
+
+  .client {
   }
 }

@@ -3,9 +3,9 @@
 
 $-clr-p-Softred: hsl(7, 99%, 70%);
 $-clr-p-Yellow: hsl(51, 100%, 49%);
-$-clr-p-Desatcyan: hsl(167, 40%, 24%); /* (graphic design text) */
-$-clr-p-Desatblue: hsl(198, 62%, 26%); /* (photography text) */
-$-clr-p-Dmoderatecyan: hsl(168, 34%, 41%); /* (footer) */
+$-clr-p-Desatcyan: hsl(167, 40%, 24%);
+$-clr-p-Desatblue: hsl(198, 62%, 26%);
+$-clr-p-Dmoderatecyan: hsl(168, 34%, 41%);
 $-clr-n-VDdesatblue: hsl(212, 27%, 19%);
 $-clr-n-VDgrayblue: hsl(213, 9%, 39%);
 $-clr-n-Dgrayblue: hsl(232, 10%, 55%);
@@ -55,7 +55,7 @@ main {
 .grid-container-main {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 540px 1.21fr 1.7fr;
+  grid-template-rows: auto;
   grid-template-areas:
     "landing"
     "egg"
@@ -71,9 +71,9 @@ main {
 }
 
 .bg-img {
+  display: block;
   width: 100%;
   height: 100%;
-  display: block;
 }
 
 .rel-div {

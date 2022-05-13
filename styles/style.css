@@ -113,6 +113,10 @@ main {
   height: 100%;
 }
 
+.hidden {
+  display: none;
+}
+
 .landing {
   grid-area: landing;
 }
@@ -136,13 +140,37 @@ main {
   display: none;
 }
 .landing .landing__info nav ol .hamburger {
-  display: block;
   background: none;
   border: none;
   padding: 0;
 }
 .landing .landing__info nav ol .hamburger img {
   height: 1rem;
+}
+.landing .landing__info nav .mobile__nav {
+  position: absolute;
+  z-index: 1;
+  width: 90%;
+  top: 7rem;
+  right: 5%;
+  padding: 1rem;
+  background-color: hsl(0deg, 0%, 100%);
+}
+.landing .landing__info nav .mobile__nav li {
+  display: block;
+  padding-block: 1.125rem;
+  font-size: 1.25rem;
+}
+.landing .landing__info nav .mobile__nav .contact {
+  display: block;
+  margin: 1rem auto;
+  padding: 1.1rem 2.25rem;
+  border: none;
+  border-radius: 2rem;
+  background-color: hsl(51deg, 100%, 49%);
+}
+.landing .landing__info nav .mobile__nav .contact:hover {
+  cursor: pointer;
 }
 .landing .landing__info div {
   position: absolute;
@@ -247,13 +275,29 @@ main {
   color: hsl(232deg, 10%, 55%);
 }
 
+#img-grid1 {
+  content: url(../images/mobile/image-gallery-milkbottles.jpg);
+}
+
+#img-grid2 {
+  content: url(../images/mobile/image-gallery-orange.jpg);
+}
+
+#img-grid3 {
+  content: url(../images/mobile/image-gallery-cone.jpg);
+}
+
+#img-grid4 {
+  content: url(../images/mobile/image-gallery-sugar-cubes.jpg);
+}
+
 .grid-container-imgs {
   grid-area: img-grid;
   display: grid;
   grid-template: repeat(2, 50vw)/repeat(2, 50vw);
 }
 .grid-container-imgs img {
-  height: 100%;
+  width: 100%;
 }
 
 .footer {
@@ -264,6 +308,7 @@ main {
 .footer img {
   width: 55%;
   padding-block: 2rem;
+  margin-left: -4%;
 }
 .footer__page-links {
   display: flex;
@@ -271,9 +316,6 @@ main {
   justify-content: space-between;
   padding: 1rem 0.5rem;
   color: hsl(167deg, 40%, 24%);
-}
-.footer__page-links :hover {
-  color: hsl(0deg, 0%, 100%);
 }
 .footer__social-links {
   padding: 4.5rem;
@@ -284,8 +326,9 @@ main {
   width: 20px;
   height: 20px;
 }
-.footer__social-links svg :hover {
+.footer__social-links svg:hover {
   fill: hsl(0deg, 0%, 100%);
+  cursor: pointer;
 }
 
 .attribution {
@@ -304,6 +347,7 @@ main {
 @media (min-width: 888px) {
   #landing-bg-img {
     content: url(../images/desktop/image-header.jpg);
+    z-index: -1;
   }
 
   #egg-bg-img {
@@ -340,14 +384,13 @@ main {
     top: -100%;
     width: 100%;
     height: 5rem;
-    padding: 4rem 2rem 2rem 2rem;
+    padding: 4rem 3rem 2rem 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   .landing .landing__info nav img {
     height: 2rem;
-    padding-inline: 0.5rem;
   }
   .landing .landing__info nav ol {
     display: flex;
@@ -358,32 +401,63 @@ main {
     padding-inline: 1.75rem;
     color: hsl(0deg, 0%, 100%);
   }
+  .landing .landing__info nav ol li:hover {
+    cursor: pointer;
+  }
   .landing .landing__info nav ol .contact {
     display: block;
-    padding: 1rem 2.25rem;
+    padding: 1.1rem 2.25rem;
     border: none;
     border-radius: 2rem;
-    margin-left: 1.25rem;
+    margin-left: 1.35rem;
+  }
+  .landing .landing__info nav ol .contact:hover {
+    cursor: pointer;
   }
   .landing .landing__info nav ol .hamburger {
     display: none;
   }
   .landing .landing__info div {
-    top: -75%;
+    top: -75.75%;
     width: 100%;
   }
   .landing .landing__info div h1 {
     font-size: 3.5rem;
     letter-spacing: 9px;
-    padding-bottom: 5.5rem;
+    padding-bottom: 5.55rem;
+  }
+
+  .learn-more {
+    position: relative;
+  }
+  .learn-more:hover:before {
+    position: absolute;
+    content: "";
+    height: 10px;
+    bottom: 20px;
+    left: 0;
+    width: 8.25em;
+    border-radius: 2.5px;
+  }
+  .learn-more:hover:after {
+    position: absolute;
+    content: "Learn More";
+    top: 100;
+    left: 0.5rem;
   }
 
   .brand {
     padding: 2rem 15% 2rem 23%;
   }
+  .brand .learn-more:hover::before {
+    background: hsl(51deg, 100%, 49%);
+  }
 
   .audience {
     padding: 2rem 23% 2rem 15%;
+  }
+  .audience .learn-more:hover::before {
+    background: hsl(7deg, 99%, 70%);
   }
 
   .brand,
@@ -392,21 +466,114 @@ main {
     flex-direction: column;
     justify-content: center;
     text-align: left;
+    z-index: 1;
   }
   .brand h2,
 .audience h2 {
     font-size: 2.5rem;
     font-weight: 900;
-    padding: 0;
+    padding-block: 1.25rem;
   }
   .brand__blurb,
 .audience__blurb {
-    padding-block: 2.5rem;
+    padding-block: 1rem;
     line-height: 1.65;
   }
   .brand .learn-more,
 .audience .learn-more {
-    padding: 0;
+    padding-block: 1.5rem;
     padding-inline: 0.5rem;
+  }
+
+  .design__info h3,
+.photography__info h3 {
+    top: min(-33.25%, -12rem);
+  }
+  .design__info p,
+.photography__info p {
+    padding-inline: 26%;
+    top: min(-23.5%, -8.5rem);
+  }
+
+  .client {
+    padding-block: 10rem;
+    padding-inline: 11.75%;
+  }
+  .client h4 {
+    font-size: 1.35rem;
+  }
+  .client__reviews {
+    display: flex;
+    justify-content: space-between;
+  }
+  .client__reviews .client__review {
+    max-width: 31%;
+  }
+  .client__reviews img {
+    height: 73px;
+    margin: 5rem 0 3.5rem 0;
+  }
+  .client__reviews .review {
+    font-size: 1.1rem;
+    padding-block: 0.125rem;
+    line-height: 2rem;
+  }
+  .client__reviews .client__info {
+    margin-left: -20px;
+  }
+  .client__reviews .client__info .client__name {
+    padding: 4.5rem 0 1rem 0;
+  }
+  .client__reviews .client__info .client__position {
+    font-size: 0.85rem;
+  }
+
+  #img-grid1 {
+    content: url(../images/desktop/image-gallery-milkbottles.jpg);
+  }
+
+  #img-grid2 {
+    content: url(../images/desktop/image-gallery-orange.jpg);
+  }
+
+  #img-grid3 {
+    content: url(../images/desktop/image-gallery-cone.jpg);
+  }
+
+  #img-grid4 {
+    content: url(../images/desktop/image-gallery-sugarcubes.jpg);
+  }
+
+  .grid-container-imgs {
+    grid-template-columns: repeat(4, 25vw);
+    grid-template-rows: auto;
+  }
+
+  .footer img {
+    width: 13%;
+    padding-block: 2.5rem;
+    margin-left: -10px;
+  }
+  .footer__page-links {
+    justify-content: center;
+    padding: 0rem 0.5rem;
+  }
+  .footer__page-link {
+    padding-inline: 2rem;
+  }
+  .footer__page-link:hover {
+    color: hsl(0deg, 0%, 100%);
+    cursor: pointer;
+  }
+  .footer__social-links {
+    padding-block: 4.75rem 0rem;
+    justify-content: center;
+  }
+  .footer__social-links svg {
+    margin: 0.9rem;
+  }
+  .footer__social-links svg :hover {
+    fill: hsl(0deg, 0%, 100%);
+    cursor: pointer;
   }
 }/*# sourceMappingURL=style.css.map */

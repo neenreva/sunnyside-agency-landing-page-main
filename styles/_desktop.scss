@@ -1,6 +1,7 @@
 @media (min-width: 888px) {
   #landing-bg-img {
     content: url(../images/desktop/image-header.jpg);
+    z-index: -1;
   }
   #egg-bg-img {
     content: url(../images/desktop/image-transform.jpg);
@@ -39,14 +40,13 @@
         top: -100%;
         width: 100%;
         height: 5rem;
-        padding: 4rem 2rem 2rem 2rem;
+        padding: 4rem 3rem 2rem 3rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
 
         img {
           height: 2rem;
-          padding-inline: 0.5rem;
         }
 
         ol {
@@ -57,13 +57,21 @@
             display: inline;
             padding-inline: 1.75rem;
             color: $-clr-n-White;
+
+            &:hover {
+              cursor: pointer;
+            }
           }
           .contact {
             display: block;
-            padding: 1rem 2.25rem;
+            padding: 1.1rem 2.25rem;
             border: none;
             border-radius: 2rem;
-            margin-left: 1.25rem;
+            margin-left: 1.35rem;
+
+            &:hover {
+              cursor: pointer;
+            }
           }
           .hamburger {
             display: none;
@@ -72,22 +80,47 @@
       }
 
       div {
-        top: -75%;
+        top: -75.75%;
         width: 100%;
         h1 {
           font-size: 3.5rem;
           letter-spacing: 9px;
-          padding-bottom: 5.5rem;
+          padding-bottom: 5.55rem;
         }
       }
     }
   }
 
+  .learn-more {
+    position: relative;
+    &:hover:before {
+      position: absolute;
+      content: '';
+      height: 10px;
+      bottom: 20px;
+		  left: 0;
+		  width: 8.25em;
+      border-radius: 2.5px;
+    }
+    &:hover:after {
+      position: absolute;
+      content: 'Learn More';
+      top: 100;
+		  left: 0.5rem;
+    }
+  }
+
   .brand {
     padding: 2rem 15% 2rem 23%;
+    .learn-more:hover::before {
+      background: $-clr-p-Yellow;
+    }
   }
   .audience {
     padding: 2rem 23% 2rem 15%;
+    .learn-more:hover::before {
+      background: $-clr-p-Softred;
+    }
   }
 
   .brand,
@@ -96,26 +129,126 @@
     flex-direction: column;
     justify-content: center;
     text-align: left;
+    z-index: 1;
     h2 {
       font-size: 2.5rem;
       font-weight: 900;
-      padding: 0;
+      padding-block: 1.25rem;
     }
 
     &__blurb {
-      padding-block: 2.5rem;
+      padding-block: 1rem;
       line-height: 1.65;
     }
 
     .learn-more {
-      padding: 0;
-      padding-inline: .5rem;
+      padding-block: 1.5rem;
+      padding-inline: 0.5rem;
     }
   }
 
-  .design {
+  .design,
+  .photography {
+    &__info {
+      h3 {
+        top: min(-33.25%, -12rem);
+      }
+      p {
+        padding-inline: 26%;
+        top: min(-23.5%, -8.5rem);
+      }
+    }
   }
 
   .client {
+    padding-block: 10rem;
+    padding-inline: 11.75%;
+    h4 {
+      font-size: 1.35rem;
+    }
+
+    &__reviews {
+      display: flex;
+      justify-content: space-between;
+
+      .client__review {
+        max-width: 31%;
+      }
+
+      img {
+        height: 73px;
+        margin: 5rem 0 3.5rem 0;
+      }
+
+      .review {
+        font-size: 1.1rem;
+        padding-block: 0.125rem;
+        line-height: 2rem;
+      }
+
+      .client__info {
+        margin-left: -20px;
+        .client__name {
+          padding: 4.5rem 0 1rem 0;
+        }
+        .client__position {
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+
+  #img-grid1 {
+    content: url(../images/desktop/image-gallery-milkbottles.jpg);
+  }
+
+  #img-grid2 {
+    content: url(../images/desktop/image-gallery-orange.jpg);
+  }
+
+  #img-grid3 {
+    content: url(../images/desktop/image-gallery-cone.jpg);
+  }
+
+  #img-grid4 {
+    content: url(../images/desktop/image-gallery-sugarcubes.jpg);
+  }
+
+  .grid-container-imgs {
+    grid-template-columns: repeat(4, 25vw);
+    grid-template-rows: auto;
+  }
+
+  .footer {
+    img {
+      width: 13%;
+      padding-block: 2.5rem;
+      margin-left: -10px;
+    }
+
+    &__page-links {
+      justify-content: center;
+      padding: 0rem 0.5rem;
+    }
+
+    &__page-link {
+      padding-inline: 2rem;
+      &:hover {
+        color: $-clr-n-White;
+        cursor: pointer;
+      }
+    }
+
+    &__social-links {
+      padding-block: 4.75rem 0rem;
+      justify-content: center;
+      svg {
+        margin: 0.9rem;
+        :hover {
+          fill: $-clr-n-White;
+          cursor: pointer;
+        }
+      }
+    }
   }
 }

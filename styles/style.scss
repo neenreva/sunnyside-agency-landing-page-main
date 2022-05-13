@@ -34,7 +34,7 @@ $-clr-n-White: hsl(0, 0%, 100%);
 html {
   font-family: "Barlow", sans-serif;
   text-align: center;
-  color: $-clr-n-VDdesatblue
+  color: $-clr-n-VDdesatblue;
 }
 
 h1,
@@ -45,7 +45,7 @@ h4,
 .learn-more,
 .client__name {
   font-family: "Fraunces", serif;
-  color: $-clr-n-VDdesatblue
+  color: $-clr-n-VDdesatblue;
 }
 
 main {
@@ -67,7 +67,7 @@ main {
     "client"
     "img-grid"
     "footer";
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .bg-img {
@@ -80,6 +80,10 @@ main {
   position: relative;
   width: 100%;
   height: 100%;
+}
+
+.hidden {
+  display: none;
 }
 
 .landing {
@@ -110,12 +114,37 @@ main {
         }
 
         .hamburger {
-          display: block;
           background: none;
           border: none;
           padding: 0;
           img {
             height: 1rem;
+          }
+        }
+      }
+
+      .mobile__nav {
+        position: absolute;
+        z-index: 1;
+        width: 90%;
+        top: 7rem;
+        right: 5%;
+        padding: 1rem;
+        background-color: $-clr-n-White;
+        li {
+          display: block;
+          padding-block: 1.125rem;
+          font-size: 1.25rem;
+        }
+        .contact {
+          display: block;
+          margin: 1rem auto;
+          padding: 1.1rem 2.25rem;
+          border: none;
+          border-radius: 2rem;
+          background-color: $-clr-p-Yellow;
+          &:hover {
+            cursor: pointer;
           }
         }
       }
@@ -158,7 +187,7 @@ main {
   &__blurb {
     font-size: 1.1rem;
     line-height: 1.77;
-    padding: .51rem 0 2rem 0;
+    padding: 0.51rem 0 2rem 0;
   }
 
   .learn-more {
@@ -189,7 +218,7 @@ main {
       top: -32.5%;
     }
     p {
-      font-size: .9751rem;
+      font-size: 0.9751rem;
       line-height: 1.77;
       position: absolute;
       top: -23%;
@@ -216,11 +245,11 @@ main {
 
     .review {
       font-size: 1.1rem;
-      padding-block: .125rem;
-      line-height: 2rem;  
+      padding-block: 0.125rem;
+      line-height: 2rem;
     }
 
-    .client__info{
+    .client__info {
       .client__name {
         font-size: 1.15rem;
         padding: 2rem 0 1rem 0;
@@ -231,7 +260,22 @@ main {
       }
     }
   }
+}
 
+#img-grid1 {
+  content: url(../images/mobile/image-gallery-milkbottles.jpg);
+}
+
+#img-grid2 {
+  content: url(../images/mobile/image-gallery-orange.jpg);
+}
+
+#img-grid3 {
+  content: url(../images/mobile/image-gallery-cone.jpg);
+}
+
+#img-grid4 {
+  content: url(../images/mobile/image-gallery-sugar-cubes.jpg);
 }
 
 .grid-container-imgs {
@@ -239,7 +283,7 @@ main {
   display: grid;
   grid-template: repeat(2, 50vw) / repeat(2, 50vw);
   img {
-    height: 100%;
+    width: 100%;
   }
 }
 
@@ -250,17 +294,15 @@ main {
   img {
     width: 55%;
     padding-block: 2rem;
+    margin-left: -4%;
   }
 
   &__page-links {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem .5rem;
+    padding: 1rem 0.5rem;
     color: $-clr-p-Desatcyan;
-    :hover {
-      color: $-clr-n-White
-    }
   }
 
   &__social-links {
@@ -270,13 +312,13 @@ main {
     svg {
       width: 20px;
       height: 20px;
-      :hover {
-        fill: $-clr-n-White
+      &:hover {
+        fill: $-clr-n-White;
+        cursor: pointer;
       }
     }
   }
 }
-
 
 .attribution {
   padding: 1rem;
@@ -287,7 +329,7 @@ main {
     text-decoration: none;
   }
   a:hover {
-    color: $-clr-p-Yellow
+    color: $-clr-p-Yellow;
   }
 }
 

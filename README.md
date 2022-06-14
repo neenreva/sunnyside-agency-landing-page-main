@@ -4,7 +4,7 @@
 
 ## Welcome! 👋 Here's a quick look:
 
-![My solution](./screenshot.jpg)
+![My solution](./design/FrontendMentorSunnysideagency%20landingpage.png)
 
 [Live Link]() [Solution Home]()
 
@@ -31,55 +31,64 @@ Your users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+Still learning the little quirks to dynanically switching image sources. And surprised how complicated it can get.
 
-To see how you can add code snippets, see below:
+HTML with the srcset attribute: 
 
-```html
-<h1>Some HTML code I'm proud of</h1>
+```
+<img class="bg-img" 
+  id="landing-bg-img" 
+  src="images/mobile/image-header.jpg" 
+  srcset="images/mobile/image-header.jpg 888w, 
+          images/desktop/image-header.jpg" 
+  alt="Background imgage" />
 ```
 
-```css
-.proud-of-this-css {
-  color: papayawhip;
+This is the way to go for accessibily. My gripe here is that you're ending up declaring twice (HTML & CSS) your 'breakpoints.' I'm guessing that in most cases there will be a few different breakpoints but it just seems like most format decisions are made in CSS and that changing the src url should be the standard. Tell me why that's not the case? To futher imphasize this, adding complexity like a grid format may lend itself to additional use of the size attribute. When doing that it formally ends up being written just like a media query in CSS.
+
+
+
+CSS declaring the src: 
+
+```
+<img class="bg-img" id="landing-bg-img" src="" alt="Background imgage" />
+```
+
+Again already likely a part of your CSS.
+
+```
+#landing-bg-img {
+  content: url(../images/mobile/image-header.jpg);
+}
+
+@media (min-width: 888px) {
+  #landing-bg-img {
+    content: url(../images/desktop/image-header.jpg);
+  }
 }
 ```
 
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+To me just the most common sense approach.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+I used the term gripe cause this could vary a lot in use cases and further in using the picture element correctly as well.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+```
+<picture class="landing__bg-img">
+  <source srcset="images/mobile/image-header.jpg">
+  <source media="(min-width: 888px)"
+    srcset="images/desktop/image-header.jpg">
+  <img class="bg-img" id="landing-bg-img" src="" alt="Background imgage" />
+</picture>
+```
+
+For now i'll leave this mess and maybe revisit when I understand this on a deeper level.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Pixel Perfect](https://www.welldonecode.com/perfectpixel/) - Overlay that really helps with the sizing of the elements.
 
 **Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
-
-## Author
-
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
 
 ### As always feedback is welcome! Thanks for checking this out.

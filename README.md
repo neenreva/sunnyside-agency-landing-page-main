@@ -1,12 +1,12 @@
-### This is a solution to the [Frontend Mentor](https://www.frontendmentor.io/home). challenge:
+### This is a solution to the [Frontend Mentor](https://www.frontendmentor.io/home) challenge:
 
 # Sunnyside agency landing page
 
-## Welcome! 👋 Here's a quick look:
+### Welcome! 👋 Here's a quick look:
 
 ![My solution](./design/FrontendMentorSunnysideagency%20landingpage.png)
 
-[Live Link]() [Solution Home]()
+[Live Link](https://neenreva.github.io/sunnyside-agency-landing-page-main/) [Solution Home](https://www.frontendmentor.io/challenges/sunnyside-agency-landing-page-7yVs3B6ef/hub/sunnyside-agency-landing-page-Rb9Mhsibh)
 
 ## The challenge
 

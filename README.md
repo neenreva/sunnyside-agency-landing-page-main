@@ -31,7 +31,7 @@ Your users should be able to:
 
 ### What I learned
 
-Still learning the little quirks to dynanically switching image sources. And surprised how complicated it can get.
+Still learning the little quirks to dynamically switching image sources. And surprised how complicated it can get.
 
 HTML with the srcset attribute: 
 
@@ -44,7 +44,7 @@ HTML with the srcset attribute:
   alt="Background imgage" />
 ```
 
-This is the way to go for accessibily. My gripe here is that you're ending up declaring twice (HTML & CSS) your 'breakpoints.' I'm guessing that in most cases there will be a few different breakpoints but it just seems like most format decisions are made in CSS and that changing the src url should be the standard. Tell me why that's not the case? To futher imphasize this, adding complexity like a grid format may lend itself to additional use of the size attribute. When doing that it formally ends up being written just like a media query in CSS.
+This is the way to go for accessibility. My gripe here is that you're ending up declaring twice (HTML & CSS) your 'breakpoints.' I'm guessing that in most cases there will be a few different breakpoints but it just seems like most format decisions are made in CSS and that changing the src url should be the standard. Tell me why that's not the case? To futher emphasize this, adding complexity like a grid format may lend itself to additional use of the size attribute. When doing that it formally ends up being written just like a media query in CSS.
 
 
 
@@ -83,7 +83,7 @@ I used the term gripe cause this could vary a lot in use cases and further in us
 </picture>
 ```
 
-For now i'll leave this mess and maybe revisit when I understand this on a deeper level.
+For now I'll leave this mess and maybe revisit when I understand this on a deeper level.
 
 ### Useful resources
 

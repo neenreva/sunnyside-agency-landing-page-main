@@ -35,7 +35,7 @@ Still learning the little quirks to dynamically switching image sources. And sur
 
 HTML with the srcset attribute: 
 
-```
+```html
 <img class="bg-img" 
   id="landing-bg-img" 
   src="images/mobile/image-header.jpg" 
@@ -50,13 +50,13 @@ This is the way to go for accessibility. My gripe here is that you're ending up 
 
 CSS declaring the src: 
 
-```
+```html
 <img class="bg-img" id="landing-bg-img" src="" alt="Background imgage" />
 ```
 
 Again already likely a part of your CSS.
 
-```
+```css
 #landing-bg-img {
   content: url(../images/mobile/image-header.jpg);
 }
